@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirmation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Your desired background color */
+        }
+        /* Custom CSS for padding and background color */
+        .header-padding {
+            padding: 20px; /* Adjust padding as needed */
+            background-color: palevioletred; /* Your desired background color */
+            color: #ffffff; /* Text color for better visibility */
+        }
+        /* Center the image */
+        .center-image {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+        /* Reduce the size of the image */
+        .small-image {
+            max-width: 50%; /* Adjust the maximum width as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 header-padding">Delete Confirmation</h1> <!-- Added "header-padding" class -->
+        <p>Are you sure you want to delete the employee '{{ employee.name }}' (ID: {{ employee_id }}), position: {{ employee.position }}?</p>
+        <form action="/delete_employee/{{ employee_id }}" method="post">
+            <button type="submit" class="btn btn-danger">Yes, delete</button>
+            <a href="/view_employees" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <!-- Image added below -->
+    <div class="center-image">
+        <img src="../static/delete.jpg" class="small-image">
+    </div>
+
+</body>
+</html>

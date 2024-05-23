@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            margin-top: 20px;
+        }
+        .navbar-custom {
+            background-color: #343a40; /* Navbar background color */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* Navbar text color */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">Employee Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/employee_logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Employee Details</h2>
+    <p><strong>Name:</strong> {{ employee[1] }}</p>
+    <p><strong>Age:</strong> {{ employee[2] }}</p>
+    <p><strong>Qualification:</strong> {{ employee[3] }}</p>
+    <p><strong>Email:</strong> {{ employee[4] }}</p>
+    <p><strong>Phone Number:</strong> {{ employee[5] }}</p>
+    <p><strong>Position:</strong> {{ employee[6] }}</p>
+    <p><strong>Department:</strong> {{ employee[7] }}</p>
+    <a href="{{ url_for('edit_user', employee_id=employee[0], email=employee[4]) }}" class="btn btn-primary">Edit</a>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

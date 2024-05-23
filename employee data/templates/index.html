@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <style>
+        /* Define your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Background color for the body */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: palevioletred; /* Background color for the header */
+            color: #fff; /* Text color for the header */
+        }
+
+        a.button {
+            text-decoration: none;
+            color: #fff; /* Text color for the link */
+            padding: 10px 15px;
+            background-color: palevioletred;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        a.button:hover {
+            background-color: #8a2be2;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image {
+            display: inline-block;
+            width: 300px; /* Adjust width as needed */
+            height: auto;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow effect */
+            position: relative; /* Ensure overlay is positioned relative to image */
+        }
+
+        .container:hover .overlay {
+            opacity: 0.5;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            transition: 0.5s ease;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Employee Management System</h1>
+</header>
+<!-- Employee and Admin Login Buttons -->
+<div class="container">
+    <a href="{{ url_for('employee_login') }}" class="button">Employee Login</a>
+    <a href="{{ url_for('login') }}" class="button">Admin Login</a>
+</div>
+<!-- Images -->
+<div class="container">
+    <a href="admin_dashboard.html">
+        <div class="image">
+            <img src="../static/adminpage.jpg" alt="Admin Page">
+            <div class="overlay"></div>
+        </div>
+    </a>
+    <a href="employee_dashboard.html">
+        <div class="image">
+            <img src="../static/adminpage.jpg" alt="Employee Page">
+            <div class="overlay"></div>
+        </div>
+    </a>
+</div>
+</body>
+</html>

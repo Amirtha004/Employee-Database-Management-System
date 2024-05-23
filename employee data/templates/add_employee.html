@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Your desired background color */
+        }
+        /* Custom CSS for padding and background color */
+        .header-padding {
+            padding: 20px; /* Adjust padding as needed */
+            background-color: palevioletred; /* Your desired background color */
+            color: #ffffff; /* Text color for better visibility */
+        }
+        .navbar-custom {
+            background-color: #343a40; /* Navbar background color */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* Navbar text color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Admin Panel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_employees">View Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin_logout">Admin Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-4 header-padding">Add Employee</h1> <!-- Added "header-padding" class -->
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="alert alert-dismissible fade show" role="alert">
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="text" class="form-control" id="age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification">Qualification:</label>
+                        <input type="text" class="form-control" id="qualification" name="qualification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position:</label>
+                        <input type="text" class="form-control" id="position" name="position" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <input type="text" class="form-control" id="department" name="department" required>
+                    </div>
+                    <!-- Other form fields -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
